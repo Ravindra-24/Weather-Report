@@ -1,0 +1,107 @@
+*{
+    margin: 0px;
+}
+
+body{
+    margin: 0px;
+    width: 100%;
+    background:url(./img/background) no-repeat center center fixed;
+    background-size:cover;
+    height: 80vh;
+    font-family: sans-serif;
+}
+
+.loader{
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.7;
+    background-color: black;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    display: none;
+}
+
+/* .header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+} */
+
+.heading h1{
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+    margin: 20px 0px;
+    color: #fff;
+}
+
+.input-container{
+    width: 500px;
+    margin: 0px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+.result{
+    padding: 0px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-width: 50px;
+}
+
+div.result > div{
+    margin: 10px 20px;
+}
+
+.result-head{
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    color: #fff;
+    font-size: 20px;
+    font-style: italic;
+    margin: 20px 0px;
+}
+
+ svg{
+    width: 50px;
+    height: 50px;
+    display:inline-block;
+}  
+
+.locate{
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 10px;
+    margin-right: 80px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width:520px) {
+    .heading h1{
+        font-size: 30px;
+    }
+    
+    .input-container{
+        width: 100%;
+        padding: 0px 10px;
+    }
+}
+  
+ 
