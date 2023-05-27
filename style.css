@@ -8,7 +8,6 @@ body{
     background:url(./img/background) no-repeat center center fixed;
     background-size:cover;
     height: 80vh;
-    font-family: sans-serif;
 }
 
 .loader{
@@ -35,31 +34,98 @@ body{
 
 } */
 
-.heading h1{
+/* .heading h1{
     display: flex;
     justify-content: center;
     font-size: 50px;
     margin: 20px 0px;
     color: #fff;
+} */
+
+.card{
+    width: 90%;
+    max-width: 470px;
+    background: linear-gradient(135deg, #00feba, #5b548a);
+    color: #fff;
+    margin: 100px auto 0;
+    border-radius: 20px;
+    padding: 40px 35px;
 }
 
-.input-container{
+.weather-head{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.details{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    align-items: center;
+    padding: 0px 20px;
+}
+
+.weather-icon{
+    max-width: 170px;
+    margin-top: 30px;
+}
+
+.weather h1{
+    font-size: 80px;
+    font-weight: 500;
+}
+
+.city{
+    font-size: 27px;
+    font-weight: 500;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.weather h2{
+    font-size: 40px;
+    font-weight: 400;
+    margin-top: -10px;
+}
+
+.col{
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+.col img{
+    /* width: 40px; */
+    max-width: 40px;
+    margin-right: 10px;
+}
+
+.humidity, .wind{
+    font-size: 28px;
+    margin-top: -6px;
+}
+
+.unit{
+    font-size: 14px;
+}
+/* .input-container{
     width: 500px;
     margin: 0px auto;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100px;
-}
+} */
 
-.result{
+/* .result{
     padding: 0px 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    /* min-width: 100px; */
-    /* max-width: 200px; */
-}
+    min-width: 100px; 
+     max-width: 200px;
+} */
 
 div.result > div{
     margin: 10px 20px;
@@ -94,14 +160,16 @@ div.result > div{
 }
 
 
-@media screen and (max-width:520px) {
-    .heading h1{
-        font-size: 30px;
+@media screen and (max-width:500px) {
+    .weather h1{
+        font-size: 50px;
     }
-    
-    .input-container{
-        width: 100%;
-        padding: 0px 10px;
+    .weather h2{
+        font-size: 20px;
+    }
+    .details{
+        
+        padding: 0px;
     }
 }
   
