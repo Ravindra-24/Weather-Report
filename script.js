@@ -36,12 +36,12 @@ const showResult = (name, country,temp, humidity,speed,currentTime,feels_like, g
 </div>
 <hr class='dashed-line'>
 <div class="other-details">
-          <p><span>feels like:</span> <span>${feels_like}°c</span></p></span>
-            <p><span>ground level:</span> <span>${grnd_level}ft</p></span>
-            <p><span>pressure:</span> <span>${pressure}atm</p></span>
-            <p><span>sea level: </span><span>${sea_level}ft</p></span>
-            <p><span>max tempreture:</span> <span>${temp_max}°c</p></span>
-            <p><span>min tempreture:</span> <span>${temp_min}°c</p></span>
+          <p><span>Feels like:</span> <span>${feels_like}°c</span></span></p>
+            <p><span>Ground level:</span> <span>${grnd_level}ft</span></p>
+            <p><span>Pressure:</span> <span>${pressure}atm</span></p>
+            <p><span>Sea level: </span><span>${sea_level}ft</span></p>
+            <p><span>max Tempreture:</span> <span>${temp_max}°c</span></p>
+            <p><span>min Tempreture:</span> <span>${temp_min}°c</span></p>
         </div>`;
 
 const key = "8f2875f9b989ac5a9dc52fb980db0d8d";
