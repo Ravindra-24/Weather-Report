@@ -11,7 +11,7 @@ const hideLoader = () => {
   loader.style = "display:none";
 };
 
-const showResult = (name, country,temp, humidity,speed,currentTime) => `<div class="weather">
+const showResult = (name, country,temp, humidity,speed,currentTime,feels_like, grnd_level,pressure,sea_level,temp_max,temp_min) => `<div class="weather">
 <div class="weather-head">
 <img src="" class='weather-icon'/>
 <h1 class="temp">${temp}°c</h1>
@@ -33,7 +33,16 @@ const showResult = (name, country,temp, humidity,speed,currentTime) => `<div cla
     </div>
   </div>
 </div>
-</div>`;
+</div>
+<hr class='dashed-line'>
+<div class="other-details">
+          <p><span>feels like:</span> <span>${feels_like}°c</span></p></span>
+            <p><span>ground level:</span> <span>${grnd_level}ft</p></span>
+            <p><span>pressure:</span> <span>${pressure}atm</p></span>
+            <p><span>sea level: </span><span>${sea_level}ft</p></span>
+            <p><span>max tempreture:</span> <span>${temp_max}°c</p></span>
+            <p><span>min tempreture:</span> <span>${temp_min}°c</p></span>
+        </div>`;
 
 const key = "8f2875f9b989ac5a9dc52fb980db0d8d";
 const limit = 5;
@@ -66,10 +75,10 @@ const getWeather = async () => {
       console.log(``,locationData );
       const currentTime = new Date().toLocaleTimeString();
         const { name, country } = data[0];
-        const { humidity} = locationData.main;
+        const { humidity,feels_like, grnd_level,pressure,sea_level,temp_max,temp_min} = locationData.main;
         const temp=locationData.main.temp.toFixed(0);
         const {speed } = locationData.wind;
-        resultContainer.innerHTML +=showResult(name, country,temp, humidity, speed,currentTime);
+        resultContainer.innerHTML +=showResult(name, country,temp, humidity, speed,currentTime,feels_like, grnd_level,pressure,sea_level,temp_max,temp_min);
         weatherIcon(locationData)
     }
     } catch (error) {
@@ -94,8 +103,10 @@ document.querySelector(".weather-icon").src="./img/snow.png";
 document.querySelector(".weather-icon").src="./img/drizzle.png";
 }else if(locationData.weather[0].main==="Mist"){
 document.querySelector(".weather-icon").src="./img/mist.png";
+}else if(locationData.weather[0].main==="Haze"){
+document.querySelector(".weather-icon").src="./img/haze.png";
 } else{
-document.querySelector(".weather-icon").src="./img/rain.png";
+document.querySelector(".weather-icon").src="./img/mist.png";
 };
 }
 
@@ -114,11 +125,11 @@ locator.addEventListener("click", () => {
             const { city, countryName } = locationData;
             var name = city;
             var country = countryName;
-            const { humidity} = data.main;
+            const { humidity,feels_like, grnd_level,pressure,sea_level,temp_max,temp_min} = data.main;
             const temp =data.main.temp.toFixed(0);
             const {speed } = data.wind;
             const currentTime = new Date().toLocaleTimeString().slice(0, 5);
-            resultContainer.innerHTML +=showResult(name, country,temp, humidity, speed,currentTime);
+            resultContainer.innerHTML +=showResult(name, country,temp, humidity, speed,currentTime,feels_like, grnd_level,pressure,sea_level,temp_max,temp_min);
             weatherIcon(data)
         } catch (error) {
             console.log(`error`, error);
